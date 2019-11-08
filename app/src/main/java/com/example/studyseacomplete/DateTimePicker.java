@@ -79,7 +79,7 @@ class DateTimePicker {
             int month = bundle.getInt("month");
             int dayOfMonth = bundle.getInt("dayOfMonth");
 
-            parent.setDateTime(year, month, dayOfMonth, hour, minute);
+            //parent.setDateTime(year, month, dayOfMonth, hour, minute);
         }
 
         public Dialog onCreateDialog(Bundle savedInstanceState) {

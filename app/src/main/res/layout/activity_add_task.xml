@@ -7,24 +7,26 @@
     android:layout_height="match_parent"
     android:background="@drawable/sea"
     tools:layout_editor_absoluteX="8dp"
-    tools:layout_editor_absoluteY="8dp">
+    tools:layout_editor_absoluteY="8dp"
+    tools:context=".AddTaskActivity">
 
-    <android.support.constraint.ConstraintLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/sea"
-        tools:activity="com.example.homeworkplanner.AddTaskActivity">
+        tools:context=".AddTaskActivity">
 
         <EditText
             android:id="@+id/etDueMillis"
-            android:layout_width="26dp"
-            android:layout_height="33dp"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
             android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
             android:ems="10"
             android:inputType="textPersonName"
             android:text="Name"
-            android:visibility="visible"
+            android:visibility="invisible"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -260,5 +262,5 @@
             app:layout_constraintLeft_toRightOf="@+id/sReminderDays"
             app:layout_constraintTop_toBottomOf="@+id/sReminder" />
 
-    </android.support.constraint.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

@@ -3,6 +3,7 @@ package com.example.studyseacomplete;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.res.TypedArray;
+import android.os.Build;
 import android.os.Bundle;
 
 import android.view.View;
@@ -14,6 +15,7 @@ import android.widget.SeekBar;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.snackbar.Snackbar;
@@ -30,9 +32,9 @@ import java.util.regex.Pattern;
 import static java.text.DateFormat.getDateTimeInstance;
 
 public class AddTaskActivity extends AppCompatActivity implements Serializable {
-    //static final TypedArray reminderTimes = HomeworkPlanner.getContext().getResources().obtainTypedArray(R.array.ReminderTimes);
-    //static final TypedArray reminderHours = HomeworkPlanner.getContext().getResources().obtainTypedArray(R.array.ReminderHours);
-    //static final TypedArray reminderDays = HomeworkPlanner.getContext().getResources().obtainTypedArray(R.array.ReminderDays);
+    static final TypedArray reminderTimes = HomeworkPlanner.getContext().getResources().obtainTypedArray(R.array.ReminderTimes);
+    static final TypedArray reminderHours = HomeworkPlanner.getContext().getResources().obtainTypedArray(R.array.ReminderHours);
+    static final TypedArray reminderDays = HomeworkPlanner.getContext().getResources().obtainTypedArray(R.array.ReminderDays);
     static final String durationTimes[] = { // TODO: move to strings.xml
             "0:05 minutes",
             "0:10 minutes",
@@ -67,12 +69,15 @@ public class AddTaskActivity extends AppCompatActivity implements Serializable {
     Spinner reminderOptions;
     TextView viewDays;
     TextView hoursLeft;
+
     Spinner viewDayOptions;
     Spinner viewHourOptions;
     String reminder = "no reminder";
     ArrayAdapter<CharSequence> hourAdapter;
     ArrayAdapter<CharSequence> dayAdapter;
     ArrayAdapter<CharSequence> reminderAdapter;
+
+    TextView practice;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -94,6 +99,7 @@ public class AddTaskActivity extends AppCompatActivity implements Serializable {
         hoursLeft = (TextView) findViewById(R.id.tvReminderHours);
         viewDayOptions = (Spinner) findViewById(R.id.sReminderDays);
         viewHourOptions = (Spinner) findViewById(R.id.sReminderHours);
+
 
         hoursLeft.setVisibility(View.INVISIBLE);
         viewDays.setVisibility(View.INVISIBLE);
@@ -234,6 +240,7 @@ public class AddTaskActivity extends AppCompatActivity implements Serializable {
     }
 
     // create the new task (called when "add task" button is pressed)
+    @RequiresApi(api = Build.VERSION_CODES.N)
     public void submit(View v) throws Exception {
         // TODO: better error handling
         if (taskEdit.getText().length() == 0)
@@ -311,4 +318,7 @@ public class AddTaskActivity extends AppCompatActivity implements Serializable {
                 .setNegativeButton("No", null)
                 .show();
     }
-}
+
+
+    }
+

@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:activity="com.example.homeworkplanner.ListActivity">
+    tools:activity="com.example.studyseacomplete.ListActivity">
 
     <LinearLayout
         android:id="@+id/container"
@@ -14,11 +15,11 @@
         android:background="@android:color/background_light"
         android:backgroundTint="@android:color/background_light"
         android:orientation="vertical"
-        tools:activity="com.example.homeworkplanner.ListActivity">
+        tools:activity="com.example.studyseacomplete.ListActivity">
 
     </LinearLayout>
 
-    <android.support.design.widget.FloatingActionButton
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -36,5 +37,5 @@
         app:layout_anchor="@+id/container"
         app:layout_anchorGravity="center" />
 
-</android.support.design.widget.CoordinatorLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
 
